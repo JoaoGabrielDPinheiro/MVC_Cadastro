@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/06/14 16:15:40.000.991,=C:\Users\Administrador\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:17:28.000.182,C:\Github\Cadastro\View\Cadastro.View.Principal.dfm=C:\Users\Administrador\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/06/14 16:17:28.000.182,C:\Github\Cadastro\View\Cadastro.View.Principal.pas=C:\Users\Administrador\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:18:20.000.315,C:\Github\Cadastro\Cadastro.dproj=C:\Users\Administrador\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/06/14 16:19:44.000.152,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:19:57.000.424,C:\Github\Cadastro\View\Cadastro.View.CadastroPessoas.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:19:57.000.424,C:\Github\Cadastro\View\Cadastro.View.CadastroPessoas.dfm=C:\Github\Cadastro\Unit1.dfm</Transaction>
+    <Transaction>2025/06/14 16:20:43.000.042,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:20:57.000.947,C:\Github\Cadastro\Controller\Cadastro.Controller.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:24:32.000.657,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:25:02.000.157,C:\Github\Cadastro\DAO\Cadastro.DAO.Connection.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:30:18.000.612,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:30:39.000.801,C:\Github\Cadastro\DAO\API\Cadastro.DAO.APIService.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:33:21.000.758,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 16:34:13.000.279,C:\Github\Cadastro\Models\Utils\Cadastro.Models.Utils.Funcoes.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 17:13:09.000.586,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 17:13:24.000.369,C:\Github\Cadastro\View\Cadastro.View.VisulizarPessoas.dfm=C:\Github\Cadastro\Unit1.dfm</Transaction>
+    <Transaction>2025/06/14 17:13:24.000.369,C:\Github\Cadastro\View\Cadastro.View.VisulizarPessoas.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 17:57:08.000.715,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 17:57:31.000.194,C:\Github\Cadastro\DAO\ClassDAO\Cadastro.DAO.ClassDAO.Pessoa.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 17:57:48.000.750,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 17:58:02.000.794,C:\Github\Cadastro\Models\Cadastro.Models.Pessoa.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 17:58:50.000.369,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/14 17:59:03.000.837,C:\Github\Cadastro\Models\Cadastro.Models.Endereco.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/15 17:23:17.634,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/15 17:23:28.454,C:\Github\Cadastro\DAO\ClassDAO\Cadastro.DAO.ClassDAO.Endereco.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
