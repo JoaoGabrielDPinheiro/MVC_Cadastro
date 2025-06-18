@@ -130,7 +130,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="View\Cadastro.View.Principal.pas">
-            <Form>Principal</Form>
+            <Form>frmPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="View\Cadastro.View.CadastroPessoas.pas">

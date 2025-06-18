@@ -109,6 +109,7 @@ end;
 
 procedure TfrmCadastroPessoas.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
+  Action := caFree;
   frmCadastroPessoas := nil;
 end;
 

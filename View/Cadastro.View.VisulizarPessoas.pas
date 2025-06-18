@@ -101,6 +101,7 @@ procedure TfrmVisualizarPessoas.FormClose(Sender: TObject; var Action: TCloseAct
 begin
   FreeAndNil(MemTable);
   FreeAndNil(DataSource);
+  Action := caFree;
   frmVisualizarPessoas := nil;
 end;
 

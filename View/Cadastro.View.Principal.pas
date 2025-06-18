@@ -11,7 +11,7 @@ uses
   FireDAC.Comp.Client, Vcl.StdCtrls, Cadastro.View.CadastroPessoas, Vcl.ExtCtrls,
   System.ImageList, Vcl.ImgList, Vcl.Buttons;
 type
-  TPrincipal = class(TForm)
+  TfrmPrincipal = class(TForm)
     Panel1: TPanel;
     btnCadastroPessoas: TSpeedButton;
     ImageList1: TImageList;
@@ -24,7 +24,7 @@ type
   end;
 
 var
-  Principal: TPrincipal;
+  frmPrincipal: TfrmPrincipal;
 
 implementation
 
@@ -32,15 +32,17 @@ implementation
 
 uses Cadastro.Controller;
 
-procedure TPrincipal.btnCadastroPessoasClick(Sender: TObject);
+procedure TfrmPrincipal.btnCadastroPessoasClick(Sender: TObject);
 begin
   frmCadastroPessoas := TfrmCadastroPessoas.Create(nil);
   frmCadastroPessoas.ShowModal;
 end;
 
-procedure TPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TfrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
+  frmPrincipal := nil;
   TCadastroController.GetInstance.Destroy;
+  Action := caFree;
 end;
 
 end.

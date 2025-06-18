@@ -2,7 +2,7 @@ program Cadastro;
 
 uses
   Vcl.Forms,
-  Cadastro.View.Principal in 'View\Cadastro.View.Principal.pas' {Principal},
+  Cadastro.View.Principal in 'View\Cadastro.View.Principal.pas' {frmPrincipal},
   Cadastro.View.CadastroPessoas in 'View\Cadastro.View.CadastroPessoas.pas' {frmCadastroPessoas},
   Cadastro.Controller in 'Controller\Cadastro.Controller.pas',
   Cadastro.DAO.Connection in 'DAO\Cadastro.DAO.Connection.pas',
@@ -17,8 +17,12 @@ uses
 {$R *.res}
 
 begin
+  {$IFDEF DEBUG}
+    ReportMemoryLeaksOnShutdown := True;
+  {$ENDIF}
+
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TPrincipal, Principal);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.Run;
 end.

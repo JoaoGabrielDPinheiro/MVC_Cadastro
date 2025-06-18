@@ -1,9 +1,9 @@
-object Principal: TPrincipal
+object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'frmPrincipal'
+  Caption = 'Principal'
   ClientHeight = 396
   ClientWidth = 478
   Color = clBtnFace
@@ -24,10 +24,8 @@ object Principal: TPrincipal
     Color = clBtnHighlight
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 176
-    ExplicitTop = 152
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    ExplicitWidth = 476
+    ExplicitHeight = 388
     object btnCadastroPessoas: TSpeedButton
       Left = 16
       Top = 24
