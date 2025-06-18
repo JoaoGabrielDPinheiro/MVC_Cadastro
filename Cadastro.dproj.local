@@ -25,7 +25,7 @@
     <Transaction>2025/06/14 17:58:02.000.794,C:\Github\Cadastro\Models\Cadastro.Models.Pessoa.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
     <Transaction>2025/06/14 17:58:50.000.369,=C:\Github\Cadastro\Unit1.pas</Transaction>
     <Transaction>2025/06/14 17:59:03.000.837,C:\Github\Cadastro\Models\Cadastro.Models.Endereco.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
-    <Transaction>2025/06/15 17:23:17.634,=C:\Github\Cadastro\Unit1.pas</Transaction>
-    <Transaction>2025/06/15 17:23:28.454,C:\Github\Cadastro\DAO\ClassDAO\Cadastro.DAO.ClassDAO.Endereco.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/15 17:23:17.000.634,=C:\Github\Cadastro\Unit1.pas</Transaction>
+    <Transaction>2025/06/15 17:23:28.000.454,C:\Github\Cadastro\DAO\ClassDAO\Cadastro.DAO.ClassDAO.Endereco.pas=C:\Github\Cadastro\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

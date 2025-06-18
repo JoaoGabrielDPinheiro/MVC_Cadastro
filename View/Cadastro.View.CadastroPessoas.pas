@@ -113,7 +113,7 @@ end;
 
 procedure TfrmCadastroPessoas.Salvar;
 begin
-  with TCadastroController.GetInstance.Pessoa  do
+  with TCadastroController.GetInstance.Pessoa do
   begin
     Nome := Trim(edtNome.Text);
     cpf  := Trim(edtCpf.Text);
@@ -121,7 +121,8 @@ begin
     telefone := Trim(edtTelefone.Text);
   end;
 
-  TUtilsFuncoes.New.ValidateFields(TCadastroController.GetInstance.Pessoa);
+  if not TUtilsFuncoes.New.ValidateFields(TCadastroController.GetInstance.Pessoa) then
+    exit;
 
   with TCadastroController.GetInstance.Endereco do
   begin
@@ -131,7 +132,8 @@ begin
     cep    := Trim(edtCep.text);
   end;
 
-  TUtilsFuncoes.New.ValidateFields(TCadastroController.GetInstance.Endereco);
+  if not TUtilsFuncoes.New.ValidateFields(TCadastroController.GetInstance.Endereco) then
+    exit;
 
   if bEdicao then
     TCadastroController.GetInstance.PessoaDAO.PutPessoa(TCadastroController.GetInstance.Pessoa,  TCadastroController.GetInstance.Endereco)

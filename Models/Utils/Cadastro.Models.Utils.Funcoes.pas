@@ -91,11 +91,6 @@ begin
         Exit(False);
       end;
 
-      if (Prop.PropertyType.TypeKind = tkInteger) and (Value.AsInteger <= 0) then
-      begin
-        ShowMessage('Erro: O campo ' + Prop.Name + ' deve ser maior que zero.');
-        Exit(False);
-      end;
     end;
 
     Result := True;

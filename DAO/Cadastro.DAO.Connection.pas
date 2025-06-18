@@ -4,7 +4,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
-  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, Forms,
   FireDAC.Phys, FireDAC.FMXUI.Wait, Data.DB, FireDAC.Comp.Client, FireDAC.DApt, FireDAC.Phys.PGDef, FireDAC.Phys.PG;
 
 
@@ -21,7 +21,7 @@ uses
     constructor Create;
     destructor Destroy;  override;
 
-    const Lib: string =  'C:\Github\Cadastro\Exe\libpq.dll';    {Caminho da dll libpq que está na pasta exe.}
+    const Lib: string = 'libpq.dll';
   end;
 
 implementation
@@ -33,7 +33,7 @@ begin
   with FConnection do
   begin
     Params.DriverID := 'PG';
-    Params.Database := 'postgres';
+    Params.Database := 'Cadastro';
     Params.UserName := 'postgres';
     Params.Password := '1234';
     Params.Add('Server=localhost');
@@ -47,7 +47,7 @@ constructor TConnection.Create;
 begin
   FConnection := TFDConnection.Create(nil);
   FDriverLink := TFDPhysPgDriverLink.Create(nil);
-  FDriverLink.VendorLib := Lib;
+  FDriverLink.VendorLib := ExtractFilePath(Application.ExeName) + Lib;
   Self.ConfigureConnection;
 end;
 
