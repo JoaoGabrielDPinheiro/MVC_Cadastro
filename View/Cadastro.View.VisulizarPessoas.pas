@@ -87,7 +87,9 @@ begin
       edtEndereco.Text := dbgPessoas.DataSource.DataSet.FieldByName('nome_endereco').AsString;
       edtCidade.Text :=  dbgPessoas.DataSource.DataSet.FieldByName('cidade').AsString;
       edtEstado.Text :=  dbgPessoas.DataSource.DataSet.FieldByName('estado').AsString;
-      id_pessoa  := dbgPessoas.DataSource.DataSet.FieldByName('id').AsInteger;
+      id_pessoas  := dbgPessoas.DataSource.DataSet.FieldByName('id').AsInteger;
+      id_endereco := dbgPessoas.DataSource.DataSet.FieldByName('id_ende').AsInteger;
+      edtCEP.Text := dbgPessoas.DataSource.DataSet.FieldByName('cep').AsString;
       bEdicao := true;
     end;
 

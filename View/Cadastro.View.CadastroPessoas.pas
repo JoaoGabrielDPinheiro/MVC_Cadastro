@@ -44,7 +44,7 @@ type
     { Private declarations }
   public
     bEdicao: boolean;
-    id_pessoa: integer;
+    id_pessoas, id_endereco: integer;
     { Public declarations }
   end;
 
@@ -63,14 +63,19 @@ procedure TfrmCadastroPessoas.AlimentaCamposEndereco;
 var
  cep: string;
 begin
-  cep := TUtilsFuncoes.New.RemoveMask(edtCEP);
+  cep := TUtilsFuncoes.New.LimparTexto(edtCEP.Text);
   TCadastroController.GetInstance.EnderecoDAO.GetEnderecoAPI(cep);
 
   with TCadastroController.GetInstance.Endereco do
   begin
-    edtEndereco.Text := nome_endereco;
-    edtCidade.Text   := cidade;
-    edtEstado.Text   := estado;
+    if Trim(edtEndereco.Text) = '' then
+      edtEndereco.Text := nome_endereco;
+
+    if Trim(edtCidade.Text) = '' then
+      edtCidade.Text   := cidade;
+
+    if Trim(edtEstado.Text) = '' then
+      edtEstado.Text   := estado;
   end;
 end;
 
@@ -94,6 +99,7 @@ procedure TfrmCadastroPessoas.Cancelar;
 begin
   bEdicao := False;
   TUtilsFuncoes.New.ClearFields(Self);
+  dtpDataNascimento.Date := Now;
 end;
 
 procedure TfrmCadastroPessoas.edtCEPExit(Sender: TObject);
@@ -108,7 +114,9 @@ end;
 
 procedure TfrmCadastroPessoas.FormShow(Sender: TObject);
 begin
-  bEdicao := false;
+  bEdicao     := false;
+  id_endereco := 0;
+  id_pessoas   := 0;
 end;
 
 procedure TfrmCadastroPessoas.Salvar;
@@ -119,6 +127,13 @@ begin
     cpf  := Trim(edtCpf.Text);
     data_nascimento := dtpDataNascimento.Date;
     telefone := Trim(edtTelefone.Text);
+    id_pessoa := id_pessoas;
+
+    if (TUtilsFuncoes.New.ValorExiste('pessoa', 'cpf', cpf, TCadastroController.GetInstance.Connection.GetConnection)) and (not bEdicao) then
+    begin
+      ShowMessage('Este CPF já está registrado no sistema.');
+      exit;
+    end;
   end;
 
   if not TUtilsFuncoes.New.ValidateFields(TCadastroController.GetInstance.Pessoa) then
@@ -130,6 +145,7 @@ begin
     cidade := Trim(edtCidade.Text);
     estado := Trim(edtEstado.Text);
     cep    := Trim(edtCep.text);
+    id_enderecos := id_endereco;
   end;
 
   if not TUtilsFuncoes.New.ValidateFields(TCadastroController.GetInstance.Endereco) then
@@ -139,6 +155,8 @@ begin
     TCadastroController.GetInstance.PessoaDAO.PutPessoa(TCadastroController.GetInstance.Pessoa,  TCadastroController.GetInstance.Endereco)
   else
     TCadastroController.GetInstance.PessoaDAO.PostPessoa(TCadastroController.GetInstance.Pessoa,  TCadastroController.GetInstance.Endereco);
+
+  Cancelar;
 end;
 
 end.

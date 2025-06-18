@@ -24,6 +24,8 @@ object frmVisualizarPessoas: TfrmVisualizarPessoas
     Height = 501
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 1196
+    ExplicitHeight = 493
     object Label1: TLabel
       Left = 32
       Top = 60
@@ -142,7 +144,18 @@ object frmVisualizarPessoas: TfrmVisualizarPessoas
         item
           Expanded = False
           FieldName = 'nome_endereco'
+          Title.Caption = 'Endere'#231'o'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -12
+          Title.Font.Name = 'Segoe UI'
+          Title.Font.Style = [fsBold]
           Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'cep'
+          Visible = False
         end>
     end
     object edtNome: TEdit
@@ -169,6 +182,8 @@ object frmVisualizarPessoas: TfrmVisualizarPessoas
         Text = '[Enter] - Editar Pessoa'
         Width = 200
       end>
+    ExplicitTop = 493
+    ExplicitWidth = 1196
   end
   object ImageList1: TImageList
     Height = 32

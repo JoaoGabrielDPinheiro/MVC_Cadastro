@@ -4,7 +4,7 @@ interface
 
 uses Cadastro.Models.Pessoa;
   type
-    TEndereco = class(TPessoa)
+    TEndereco = class
       private
         Fnome_endereco: string;
         Fcep: string;

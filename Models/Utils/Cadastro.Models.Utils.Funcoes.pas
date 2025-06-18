@@ -3,7 +3,7 @@ unit Cadastro.Models.Utils.Funcoes;
 interface
 
 uses
-  RTTI, SysUtils, Vcl.Dialogs, Vcl.Forms, Vcl.StdCtrls, Vcl.Mask;
+  RTTI, SysUtils, Vcl.Dialogs, Vcl.Forms, Vcl.StdCtrls, Vcl.Mask, FireDAC.Comp.Client;
 
 type
   IUtilsFuncoes = interface
@@ -12,6 +12,8 @@ type
     function FormatValue(str: string): string;
     procedure ClearFields(Form: TForm);
     function RemoveMask(Mask: TMaskEdit): string;
+    function LimparTexto(const Texto: string): string;
+    function ValorExiste(const Tabela, Campo, Valor: string; Conexao: TFDConnection): boolean;
   end;
 
   TUtilsFuncoes = class(TInterfacedObject, IUtilsFuncoes)
@@ -22,11 +24,14 @@ type
     function FormatValue(str: string): string;
     procedure ClearFields(Form: TForm);
     function RemoveMask(Mask: TMaskEdit): string;
+    function LimparTexto(const Texto: string): string;
+    function ValorExiste(const Tabela, Campo, Valor: string; Conexao: TFDConnection): boolean;
   end;
 
 implementation
 
 { TUtilsFuncoes }
+
 
 procedure TUtilsFuncoes.ClearFields(Form: TForm);
 var
@@ -57,6 +62,17 @@ begin
     Result := FormatFloat('#,##0.00', 0);
   end;
 end;
+
+function TUtilsFuncoes.LimparTexto(const Texto: string): string;
+var
+  i: Integer;
+begin
+  Result := '';
+  for i := 1 to Length(Texto) do
+    if CharInSet(Texto[i], ['A'..'Z', 'a'..'z', '0'..'9']) then
+      Result := Result + Texto[i];
+end;
+
 
 class function TUtilsFuncoes.New: IUtilsFuncoes;
 begin
@@ -97,6 +113,26 @@ begin
   finally
     Context.Free;
   end;
+end;
+
+function TUtilsFuncoes.ValorExiste(const Tabela, Campo, Valor: string;  Conexao: TFDConnection): boolean;
+var
+  VQuery: TFDQuery;
+begin
+  VQuery := TFDQuery.Create(nil);
+  try
+    VQuery.Connection := Conexao;
+
+    VQuery.Close;
+    VQuery.SQL.Text := 'SELECT 1 FROM ' + Tabela + ' WHERE ' + campo + ' = :valor LIMIT 1 ';
+    VQuery.ParamByName('valor').AsString := Valor;
+    VQuery.Open;
+
+    Result := not VQuery.IsEmpty;
+  finally
+    FreeAndNil(VQuery);
+  end;
+
 end;
 
 end.
